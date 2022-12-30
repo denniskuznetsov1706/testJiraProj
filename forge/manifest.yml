@@ -1,0 +1,23 @@
+modules:
+  jira:globalPage:
+    - key: smart-notifier-page
+      resource: main
+      resolver:
+        function: resolver
+      title: Smart Notifier
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/MainPageUI/build
+    tunnel:
+      port: 3000
+app:
+  id: ari:cloud:ecosystem::app/63a08eea-d449-47c8-8298-b176688bde43
+permissions:
+  content:
+    styles:
+      - unsafe-inline
+  scopes:
+    - read:jira-work
